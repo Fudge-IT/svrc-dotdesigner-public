@@ -1,8 +1,8 @@
 {
-  "version": "1.0.2",
-  "prerelease": false,
-  "publishedAt": "2026-06-19T02:17:30Z",
-  "assetName": "DotDesigner-Setup-1.0.2.exe",
-  "downloadUrl": "https://github.com/Fudge-IT/svrc-dotdesigner-public/releases/download/v1.0.2/DotDesigner-Setup-1.0.2.exe",
-  "tag": "v1.0.2"
+  "tag": "v1.0.3",
+  "version": "1.0.3",
+  "downloadUrl": "https://github.com/Fudge-IT/svrc-dotdesigner-public/releases/download/v1.0.3/DotDesigner-Setup-1.0.3.exe",
+  "publishedAt": "2026-07-24T04:04:27Z",
+  "assetName": "DotDesigner-Setup-1.0.3.exe",
+  "prerelease": false
 }
