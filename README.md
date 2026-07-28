@@ -1,49 +1,117 @@
 # Dot Designer
 
-Dot Designer is a desktop app for creating tactile dot graphics and braille-ready diagrams.
+Dot Designer is a desktop application for creating tactile dot graphics, braille-ready diagrams, and layouts intended for embossing.
 
-It is designed for workflows where dot placement matters, with tools for drawing, editing, tracing from reference images, adding braille text, and exporting diagrams for tactile production.
+It provides a visual dot-based canvas for drawing, editing, tracing, braille entry, and export. The application is designed to make tactile graphics easier to construct while keeping individual dot placement visible and editable.
 
 ## Features
 
-- Dot-based canvas for tactile graphics
-- Drawing tools for lines, curves, shapes, fill, selection, and more
-- Braille text blocks with six-key entry
-- Reference images for tracing and layout guidance
-- Export to `.vim`, `.brg`, and `.svg`
-- Export selection with optional blank-space trimming and margins
-- Custom canvas sizes and visual guide options
+### Drawing and Editing
+
+- Pencil and eraser tools with adjustable brush sizes
+- Lines, curves, rectangles, ellipses, polygons, stars, hearts, and more
+- Configurable solid and patterned fills
+- Direct entry of fill density and spacing
+- Hollow Shape tool for removing dots from inside existing outlines
+- Table generation within the canvas or a selected area
+- Unified undo and redo across drawing, braille, and reference-image changes
+
+### Selection and Transformation
+
+- Move selections partially or completely outside the canvas
+- Resize selected or pasted dots
+- Free rotation with optional 15-degree snapping
+- Rotate and flip content extending beyond the canvas
+- Cut, copy, paste, and repeated paste workflows
+- Preserve unrelated dots beneath moved selections
+- Copy raster selections between document tabs
+
+### Multiple Documents
+
+- Work on multiple drawings using tabs in one window
+- Rename and reorder tabs
+- Reopen recently closed tabs
+- Independent undo history, zoom, scroll position, tools, selections, braille, and reference images for each tab
+- Copy dots and braille blocks between tabs
+
+### Braille
+
+- Six-key braille entry
+- Multiple independently editable braille text blocks
+- Move, copy, paste, and reopen braille blocks for editing
+- Braille content remains separate from ordinary drawing dots while editing
+- Braille is included when exporting the complete canvas or a selected area
+
+### Images
+
+- Place PNG and JPEG reference images for tracing
+- Move, resize, rotate, and adjust reference-image opacity
+- Add multiple reference images to a project
+- Convert images directly into editable dots
+- Choose between:
+  - **Crisp shapes** for text, logos, diagrams, and clear edges
+  - **Shaded detail** for photographs, light, and shadow
+- Adjust dot density, inversion, output dimensions, and proportions
+- Compare converted dots against a transparent preview of the original image
+- Move and resize converted dots before confirming them
+
+### Canvas and Display
+
+- Standard and custom canvas sizes
+- Grid and dot-view modes
+- Adjustable zoom
+- Custom application colours
+- Optional safe-width guide for export planning
+- Reference images, selections, braille, and drawing dots remain aligned when the canvas is resized
+
+### Import and Export
+
+- Save editable projects as `.dots`
+- Open and import supported tactile raster files
+- Export the complete canvas as:
+  - `.vim`
+  - `.brg`
+  - `.svg`
+- Export selected areas separately
+- Optionally trim blank space from selection exports
+- Add a configurable dot margin around trimmed exports
+- Reference images and visual guides are never included in exports
 
 ## Download
 
-Download the latest version from the [Releases](../../releases) page.
+Download the latest Windows installer from the [Releases](../../releases) page.
 
-Windows builds are currently provided. macOS builds may be added in a future release.
+The application currently provides a 64-bit Windows build. macOS builds are not currently distributed through this repository.
 
-## Basic Usage
+## Getting Started
 
-1. Create or open a Dot Designer project.
-2. Draw using the toolbar tools.
-3. Add reference images if needed for tracing or layout.
-4. Use the braille tool to place editable braille text blocks.
-5. Save your project as a `.dots` file.
-6. Export the full canvas or a selected region.
+1. Create a new tab or open an existing project.
+2. Choose a drawing tool from the toolbar.
+3. Draw directly on the dot canvas or import existing content.
+4. Add reference images when tracing or positioning a design.
+5. Use the braille tool to create editable braille text blocks.
+6. Save the editable project as a `.dots` file.
+7. Export the complete canvas or a selected region in the required format.
 
 ## File Formats
 
-- `.dots` - Dot Designer project file
-- `.vim` - tactile graphics export format
-- `.brg` - braille/tactile graphics export format
-- `.svg` - scalable visual export format
+- `.dots` - Editable Dot Designer project containing drawing dots, braille blocks, canvas settings, and reference images
+- `.vim` - Fixed tactile raster export format
+- `.brg` - Fixed braille/tactile graphics raster format
+- `.svg` - Scalable visual export format
 
-## Braille and Export Notes
+Reference images are stored in `.dots` projects but are not included in exported tactile or SVG files.
 
-Braille text in Dot Designer is handled as a separate editable overlay so it can be moved and edited independently from drawing dots.
+## Braille and Export Limitations
 
-When exporting to fixed raster formats such as `.vim` or `.brg`, braille placement is converted into the available dot/cell grid. Because these formats and downstream embossing workflows have fixed spacing constraints, physical output may vary slightly. Braille spacing should be considered best-effort within those export limitations.
+Braille blocks are independently editable within Dot Designer, but `.vim` and `.brg` are fixed raster formats. Braille and drawing content must therefore be composed onto the dot positions supported by those formats during export.
 
-Reference images are for tracing and layout only. They are not included in exported files.
+Physical spacing and final embossed output can also be affected by downstream translation, scaling, embosser configuration, and punch dimensions. Braille spacing should be treated as best-effort within the limitations of the selected export format and production workflow.
+
+Image conversion is intended to provide an editable starting point. Converted graphics may require manual cleanup depending on the source image and desired tactile result.
 
 ## Project Status
 
-Dot Designer is feature-complete for its initial workflow. Future updates are expected to focus on bug fixes, polish, and compatibility improvements.
+Dot Designer is feature-complete for its core tactile-graphics workflow. Future updates are expected to focus on usability, compatibility, accessibility, and bug fixes.
+
+This public repository provides release downloads and update metadata. The application source code is maintained privately.
